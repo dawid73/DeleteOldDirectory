@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeleteOldDirectory", "DeleteOldDirectory\DeleteOldDirectory.csproj", "{35226B49-2BCF-4B5A-8D13-6A61740AA972}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35226B49-2BCF-4B5A-8D13-6A61740AA972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35226B49-2BCF-4B5A-8D13-6A61740AA972}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35226B49-2BCF-4B5A-8D13-6A61740AA972}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35226B49-2BCF-4B5A-8D13-6A61740AA972}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {04E88DB7-B55F-4F80-992A-0E944D0F0D11}
+	EndGlobalSection
+EndGlobal

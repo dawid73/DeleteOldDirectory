@@ -1,0 +1,7 @@
+C:\Users\dhonkisz\source\repos\DeleteOldDirectory\DeleteOldDirectory\obj\Debug\DeleteOldDirectory.csprojResolveAssemblyReference.cache
+C:\Users\dhonkisz\source\repos\DeleteOldDirectory\DeleteOldDirectory\obj\Debug\DeleteOldDirectory.csproj.CoreCompileInputs.cache
+C:\Users\dhonkisz\source\repos\DeleteOldDirectory\DeleteOldDirectory\bin\Debug\DeleteOldDirectory.exe.config
+C:\Users\dhonkisz\source\repos\DeleteOldDirectory\DeleteOldDirectory\bin\Debug\DeleteOldDirectory.exe
+C:\Users\dhonkisz\source\repos\DeleteOldDirectory\DeleteOldDirectory\bin\Debug\DeleteOldDirectory.pdb
+C:\Users\dhonkisz\source\repos\DeleteOldDirectory\DeleteOldDirectory\obj\Debug\DeleteOldDirectory.exe
+C:\Users\dhonkisz\source\repos\DeleteOldDirectory\DeleteOldDirectory\obj\Debug\DeleteOldDirectory.pdb
