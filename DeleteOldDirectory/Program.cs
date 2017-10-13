@@ -1,4 +1,7 @@
-﻿using System;
+﻿// autor: Dawid Honkisz
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,10 +17,16 @@ namespace DeleteOldDirectory
 
         public static void Empty(this System.IO.DirectoryInfo directory, int days)
         {
-            //delete file:  
+            //usuwanie pliku :  
+
             foreach (System.IO.FileInfo file in directory.GetFiles())
             {
+                // zmienna pomocnicza. Jeżeli plik zaczyna się od @
+                // wówczas w zmienna d wspiuje się wartość znajdująca się
+                // w nazwie pliku. jeżeli nie ma w nazwie pliku @ wówczas
+                // w wartość d wspiuje sie wartość z app.conf
                 int d;
+
                 if (file.ToString().StartsWith("@"))
                 {
                     d = CheckWidthDays(file.ToString());
@@ -30,10 +39,12 @@ namespace DeleteOldDirectory
                     d = days;
                 }
 
+                //sprawdzenie czy dany plik jest 
+                //utworzny wcześniej niż aktualna data - wartość d
                 if (file.CreationTime < DateTime.Now.AddDays(-d))
                 {
                     try
-                    {
+                    {   //usunięcie pliku
                         file.Delete();
                         wpiszLog("Usunięto plik : " + file.ToString());
                     }
@@ -44,7 +55,9 @@ namespace DeleteOldDirectory
                 }
             }
 
-            //delete directory:
+            //usuwanie katalogu:
+            //zasada działania taka sama jak w przypadku 
+            //pliku, czyli pętli powyżej ^^
             foreach (System.IO.DirectoryInfo subDirectory in directory.GetDirectories())
             {
                 int d;
@@ -77,7 +90,12 @@ namespace DeleteOldDirectory
             }
         }
 
-
+        // funkcja przyjmuje nazwę pliku,
+        // i dzięki fukncji Regex wyciąga
+        // z nazwy pierwsze wystąpienie cyfy
+        // nie ma znaczenia z ilu cyfer skłąda się liczba.
+        // wyciągane jest pierwsza liczba w nazwie pliku, 
+        // czyli w tym przypadku piersza liczba po '@'
         public static int CheckWidthDays(string nameFile)
         {
             string name = nameFile;
@@ -107,8 +125,13 @@ namespace DeleteOldDirectory
 
             string FilePath = System.Configuration.ConfigurationManager.AppSettings["FilePath"];
             
+            // w app.config podawana jest wartość
+            // tygodni, ponieważ nie da się odjąć
+            // od daty tygodni, wartość 'week' 
+            // pomnożamy przez 7
             int weeks = Int32.Parse(System.Configuration.ConfigurationManager.AppSettings["Weeks"]);
             int days = weeks * 7;
+
 
             System.IO.DirectoryInfo directory = new System.IO.DirectoryInfo(FilePath);
             Program.Empty(directory, days);
